@@ -9,6 +9,7 @@ Agendar Evento
     <div style="display: flex; justify-content: space-between; align-items: center; height: 80vh;">
         <div style="width: 50%;">
             <h2>Agenda un evento con nosotros:</h2>
+            <!-- Formulario de ingreso de un nuevo evento -->
             <form method="get" action="/agendar/">
                 {% csrf_token %}
                 <label for="nombre">Nombre:</label>
@@ -46,9 +47,10 @@ Agendar Evento
                 <button type="submit">Agendar</button>
             </form>
         </div>
-
+        <!-- Imagen de evento generico -->
         <img src="{% static 'IM5.png' %}" alt="Imagen5" style="width: 40%; height: auto;">
     </div>
+    <!-- Botón para regresar a la página principal -->
     <div style="text-align: center; margin-top: 20px;">
         <a href="{% url 'index' %}" style="text-decoration: none; padding: 10px 20px; background-color: #e74c3c; color: #fff; border-radius: 5px;">Volver</a>
     </div>

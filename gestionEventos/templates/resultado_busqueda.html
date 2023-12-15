@@ -6,12 +6,12 @@ Resultado Busqueda
 
 {% block content%}
 <p>Estás buscando eventos realizados en <strong>{{lugar}}</strong></p>
-
+    <!--Si hay eventos para mostrar -->
     {%if eventos%}
         <p>Eventos encontrados: {{eventos|length}} eventos:</p>
 
         <ul>
-
+            <!-- Se muestran todos los eventos de la lista -->
             {%for evento in eventos%}
             {%if evento.realizado%}
             <li>{{evento.titulo}}, {{evento.fecha_realizacion}}, {{evento.ubicacion}}, Ya realizado.</li>
@@ -21,10 +21,12 @@ Resultado Busqueda
             {%endfor%}
 
         </ul>
+    <!-- Si no hay eventos que mostrar -->
     {%else%}
         <p>Ningún evento ha sido realizado ni esta agendado para realizarse en {{lugar}}</p>
 
     {%endif%}
+    <!-- Botón de regreso a página principal -->
     <div style="text-align: center; margin-top: 20px;">
         <a href="{% url 'index' %}" style="text-decoration: none; padding: 10px 20px; background-color: #e74c3c; color: #fff; border-radius: 5px;">Página Principal</a>
     </div>

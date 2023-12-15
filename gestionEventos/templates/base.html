@@ -11,31 +11,31 @@
             padding: 0;
             font-family: 'Arial', sans-serif;
         }
-
+        /*Colores de fondo y de texto*/
         .navbar {
-            background-color: #3498db; /* Color de fondo*/
+            background-color: #3498db; 
             padding: 15px;
-            color: #fff; /* Color del texto */
+            color: #fff; 
             display: flex;
             justify-content: space-between;
         }
-
+        /*Proporciones*/
         .navbar-title {
-            flex: 3; /* Cubre el 75% de la barra superior */
+            flex: 3; 
             font-size: 24px;
         }
 
         .navbar img {
-            width: 50px; /* Ajusta el tamaño de la imagen según tus necesidades */
+            width: 50px; 
             height: auto;
         }
 
         .content {
             padding: 20px;
         }
-
+        /*Configuracion pie de página*/
         .footer {
-            background-color: #333; /* Color oscuro para el pie de página */
+            background-color: #333; 
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -48,13 +48,14 @@
         <div class="navbar-title">
             Event Manager
         </div>
+        <!-- Inserción del logo de Black Nexus -->
         <img src="{% static 'BNL.png' %}" alt="Logo" style="width: 150px; height: auto;">
     </div>
 
     <div class="content">
         {% block content %}{% endblock %}
     </div>
-
+    <!-- Configuración del pie de página -->
     <div class="footer">
         <p>Contactanos: <a href="mailto:jo.figueroa.mora@gmail.com">jo.figueroa.mora@gmail.com</a> | +56 9 7521 1349</p>
         <p>Todos los derechos reservados</p>
