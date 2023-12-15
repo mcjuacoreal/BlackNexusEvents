@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Resultado Busqueda
+{%endblock %}
+
+{% block content%}
+<p>Estás buscando eventos realizados en <strong>{{lugar}}</strong></p>
+
+    {%if eventos%}
+        <p>Eventos encontrados: {{eventos|length}} eventos:</p>
+
+        <ul>
+
+            {%for evento in eventos%}
+            {%if evento.realizado%}
+            <li>{{evento.titulo}}, {{evento.fecha_realizacion}}, {{evento.ubicacion}}, Ya realizado.</li>
+            {%else%}
+            <li>{{evento.titulo}}, {{evento.fecha_realizacion}}, {{evento.ubicacion}}, Aún no realizado.</li>
+            {%endif%}
+            {%endfor%}
+
+        </ul>
+    {%else%}
+        <p>Ningún evento ha sido realizado ni esta agendado para realizarse en {{lugar}}</p>
+
+    {%endif%}
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'index' %}" style="text-decoration: none; padding: 10px 20px; background-color: #e74c3c; color: #fff; border-radius: 5px;">Página Principal</a>
+    </div>
+{% endblock %}

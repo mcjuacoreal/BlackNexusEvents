@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Busqueda de eventos
+{%endblock %}
+
+{% block content%}
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 80vh;">
+        <img src="{% static 'IM4.png' %}" alt="Imagen de evento generica" style="width: 40%; height: auto;">
+
+        <!-- Formulario en la derecha -->
+        <div style="width: 40%;">
+            <h2>Busca en nuestro registro de eventos:</h2>
+            <form method="GET" action="/buscar/">
+                <label for="lugar_evento">Lugar de evento:</label>
+                <input type="text" id="lugar_evento" name="lugar_evento" required>
+                <br>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'index' %}" style="text-decoration: none; padding: 10px 20px; background-color: #e74c3c; color: #fff; border-radius: 5px;">Volver</a>
+    </div>
+{% endblock %}

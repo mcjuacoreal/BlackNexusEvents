@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Indice
+{%endblock %}
+
+{% block content%}
+<h1>Bienvenidos</h1>
+    <div style="display: flex; justify-content: space-between; align-items: center; height: 80vh;">
+        <img src="{% static 'IM1.png' %}" alt="Imagen1" style="width: 38%; height: auto;">
+        <div style="text-align: center; width: 20%;">
+            <div style="background-color: #f39c12; padding: 15px; border-radius: 10px;">
+                <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: #fff;">
+                    ¿Estás deseando casarte pero organizar la boda te parece agobiante?,<br>
+                    ¿Tu hijo está de cumpleaños y no sabes cómo sorprenderlo?,<br>
+                    ¿Tu mejor amigo tiene expectativas muy altas para su despedida de soltero?
+                </p>
+                <p style="font-family: 'Arial', sans-serif; font-size: 20px; color: #fff; margin-top: 10px;">
+                    ¡Nosotros nos encargamos de todo!
+                </p>
+            </div>
+        </div>
+        <img src="{% static 'IM2.png' %}" alt="Imagen2" style="width: 38%; height: auto;">
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'programar-evento' %}" style="text-decoration: none; padding: 10px 20px; background-color: #3498db; color: #fff; border-radius: 5px; margin-right: 10px;">Agendar Evento</a>
+        <a href="{% url 'buscar-evento' %}" style="text-decoration: none; padding: 10px 20px; background-color: #2ecc71; color: #fff; border-radius: 5px;">Buscar Evento</a>
+    </div>
+{% endblock %}
